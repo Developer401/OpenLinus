@@ -6,7 +6,9 @@
 
 
 
-element(0,0,0,10,15,true, true);
+element(80,0,0,10,15,false, false);
+element(100,0,0,10,15,false, false);
+element(200,0,0,20,15,false, false);
 
 
 
@@ -21,18 +23,20 @@ element(0,0,0,10,15,true, true);
 
 module element(x,y,z, cylh, cylr, mw1, mw2)
 {
-translate([x,y,z]){ rotate([0,90,0]){cylinder(h=cylh, r=cylr);}}
+translate([x,y,z]){
+	rotate([0,90,0]){cylinder(h=cylh, r=cylr);}
 
 if(mw1==true)
-	translate([x,y,z]){mount_male(cylh,cylr, true);}
+mount_male(cylh,cylr, true);
 if(mw1==false)
-	translate([x,y,z]){mount_female(cylh,cylr);}
+mount_female(cylh,cylr);
 
 
 if(mw2==false)
-	rotate([0,180,0]){translate([-cylh,y,z]){mount_female(cylh,cylr);}}
+	rotate([0,180,0]){translate([-cylh,0,0]){mount_female(cylh,cylr);}}
 if(mw2==true)
-	rotate([0,180,0]){translate([-cylh,y,z]){mount_male(cylh,cylr);}}
+	rotate([0,180,0]){translate([-cylh,0,0]){mount_male(cylh,cylr);}}
+}
 
 }
 module mount_male(cylh, cylr)
