@@ -2,14 +2,21 @@
 
 
 
+move=0;
+
+
+
+element(0,0,0,10,15,true, false);
+rotate([0,move,0])element(38,0,0,10,15,true, false);
+
+//rotate([0,70,0])element(30,0,22,10,15,true, false);
 
 
 
 
-element(80,0,0,10,15,false, false);
-element(100,0,0,10,15,false, false);
-element(200,0,0,20,15,false, false);
 
+
+element(200,0,0,20,15,false, true);
 
 
 
@@ -51,12 +58,12 @@ translate([cylh,cylr-9 ,0])
 {
 rotate([90,90,0])
 {
-cylinder(h=5, r=10, center=true); $fn=50;
+scale([1,2,1])cylinder(h=5, r=9, center=true); $fn=50;
 }
 }
 
 
-translate([cylh+5,cylr-9, 0])
+translate([cylh+14,cylr-9, 0])
 {
 rotate([90,90,0])
 {
@@ -74,12 +81,12 @@ translate([cylh,-cylr+9 ,0])
 {
 rotate([90,90,0])
 {
-cylinder(h=5, r=10, center=true); $fn=50;
+scale([1,2,1])cylinder(h=5, r=9, center=true); $fn=50;
 }
 }
 
 
-translate([cylh+5,-cylr+9, 0])
+translate([cylh+14,-cylr+9, 0])
 {
 rotate([90,90,0])
 {
@@ -106,13 +113,18 @@ translate([cylh, 0 ,0])
 {
 rotate([90,90,0])
 {
-cylinder(h=5, r=10, center=true); $fn=50;
+
+difference()
+{
+scale([1,2,1])cylinder(h=5, r=10, center=true); $fn=50;
+translate([-cylh-15,1,-5])cube([25,25,10]);
 }
 }
+}
 
 
 
-translate([cylh+5,0 ,0])
+translate([cylh+14,0 ,0])
 {
 rotate([90,90,0])
 {
