@@ -22,6 +22,8 @@
 //translate([0,-cylr,-0.2])cube([2*cylr,2*cylr,cylh+2*0.2]);
 //
 //}
+cylh=5; 
+cylr=150;
 difference()
 {
 //A
@@ -33,7 +35,7 @@ rotate([90,90,0])
 	///////////////////////
 difference(){
 scale([1,2,1])cylinder(h=5, r=10, center=true); $fn=50;
-translate([-10,0,0])cube([20,20,5]);
+translate([-10,0,-5])cube([20,20,10]);
 }
 
 /////////////////////////
