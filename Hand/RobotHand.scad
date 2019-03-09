@@ -1,11 +1,6 @@
 
 
-
-
-
-
-
-element(0,0,0,10,15,3, 3);
+element(0,0,0,5,15,true, false);
 
 
 
@@ -34,12 +29,13 @@ $fn=resolution;
 
 module element(x,y,z, cylh, cylr, mw1, mw2)
 {
+union(){
 translate([x,y,z]){
 difference()
 	{
 	rotate([0,90,0])cylinder(h=cylh, r=cylr);
 		
-	rotate([0,90,0])translate([cylr-4,0,-0.1])rotate([0,0,0])cylinder(h=cylh+0.2, r=2);
+   rotate([0,90,0])translate([cylr-2.5,0,-0.1])rotate([0,0,0])cylinder(h=cylh+0.2, r=2);
 	
 	}
 
@@ -61,7 +57,7 @@ if(mw2==3)
 	rotate([0,180,0]){translate([-cylh,0,0]){mount_end(cylh,cylr);}}
 }
 }
-
+}
 }
 module mount_male(cylh, cylr)
 {
