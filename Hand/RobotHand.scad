@@ -1,6 +1,6 @@
 
 
-element(0,0,0,5,15,true, false);
+element(0,0,0,20,15,true, 3);
 
 
 
@@ -36,6 +36,7 @@ difference()
 	rotate([0,90,0])cylinder(h=cylh, r=cylr);
 		
    rotate([0,90,0])translate([cylr-2.5,0,-0.1])rotate([0,0,0])cylinder(h=cylh+0.2, r=2);
+    rotate([0,90,0])translate([-cylr+2.5,0,-0.1])rotate([0,0,0])cylinder(h=cylh+0.2, r=2);
 	
 	}
 
@@ -183,7 +184,7 @@ module mount_end(cylh, cylr)
 
 
 
-translate([10,-5 ,0])
+translate([cylh,-5 ,0])
 {
 rotate([90,90,0])
 {
@@ -194,7 +195,7 @@ rotate([180,0,0])translate([-15,0,-5])cube([20,20,10]);
 }
 }
 
-translate([10,5 ,0])
+translate([cylh,5 ,0])
 {
 rotate([90,90,0])
 {
@@ -205,7 +206,7 @@ rotate([180,0,0])translate([-15,0,-5])cube([20,20,10]);
 }
 }
 
-translate([14, 10 ,0])
+translate([cylh+4, 10 ,0])
 {
 rotate([90,90,0])
 {
